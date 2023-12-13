@@ -1,47 +1,39 @@
-"use client";
+'use client';
 
 import React, { useState } from "react";
 
 export default function Form() {
-  const [foods, setFoods] = useState([{ food: 'hello' }]);
+  const [names, setNames] = useState([{ name: "" }]);
 
-  const removeFood = async (event, index) => {
-    event.preventDefault()
-    const copy = [...foods]
-    const newFoodList = copy.splice(index, 1);
-    console.log(newFoodList)
-    setFoods(copy)
+  const addName = () => {
+    setNames([...names, {name: ""}])
   }
 
-  const addFood = async (e) => {
-    e.preventDefault()
-    setFoods([...foods, { food: 'dsadsad' }])
+  const removeName = (index) => {
+    const copy = [...names];
+    copy.splice(index, 1);
+    setNames(copy)
   }
+
 
   return (
     <form action="" autoComplete="off">
       <div className="">
-        <label>Add Food(s)</label>
-        {foods.map((food, index) => {
-          return (
-            <div key={index}>
-              <div  className="flex">
-                <input type="text" required />
-                {foods.length > 1 && (
-                  <button type="button" onClick={e => removeFood(e, index)}>
-                    <span>Remove</span>
-                  </button>
-                )}
-              </div>
-              <div>
-                {foods.length - 1 === index && foods.length <= 8 && (
-                  <button type="button" onClick={e => addFood(e)}>
-                    <span>Add a food</span>
-                  </button>
-                )}
-              </div>
+        <label>Add name(s)</label>
+        {names.map((name, index) => {
+          return <div key={index}>
+            <div>
+              <input type="text" required />
+              <button type="button" onClick={e => addName()}>
+                <span>Add another name</span>
+              </button>
             </div>
-          );
+            <div>
+              <button type="button" onClick={e => removeName(index)}>
+                <span>Remove</span>
+              </button>
+            </div>
+          </div>;
         })}
       </div>
     </form>
