@@ -3,9 +3,8 @@ import React, { useEffect } from 'react'
 import { useGlobalContext } from '../context/store'
 
 export default function Wheel() {
-  const { name, setName } = useGlobalContext();
+  const { name } = useGlobalContext();
 
-  console.log(name, 'dsdad')
   useEffect(() => {
 
   }, [name])
