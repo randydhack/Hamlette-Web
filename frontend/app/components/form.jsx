@@ -29,7 +29,7 @@ export default function Form() {
   };
 
   return (
-    <form action="" autoComplete="off">
+    <form action="" autoComplete="off" className="m-3">
       <div className="item-center w-full">
         <label>Add name(s)</label>
         {nameList.map((el, index) => {

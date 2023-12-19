@@ -6,7 +6,6 @@ type DataType = {
     name: string
 }
 
-
 interface ContextProps {
     name: DataType[]
     setName: Dispatch<SetStateAction<DataType[]>>
