@@ -11,6 +11,7 @@ interface ContextProps {
     setName: Dispatch<SetStateAction<DataType[]>>
 
 
+
 }
 
 const GlobalContext = createContext<ContextProps> ({
