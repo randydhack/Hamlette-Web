@@ -17,6 +17,7 @@ interface ContextProps {
 const GlobalContext = createContext<ContextProps> ({
     name: [],
     setName: (): DataType[] => []
+
 })
 
 
