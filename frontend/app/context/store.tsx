@@ -30,6 +30,7 @@ export const GlobalContextProvider = ({ children })=> {
 
     const [name, setName] = useState<[{name: ''}] | DataType[]>([{name: ''}]);
 
+
     return(
         <GlobalContext.Provider value={{ name, setName}}>
             {children}
